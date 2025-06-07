@@ -1,68 +1,59 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: "Open Sans", sans-serif;
+body {
+    font-family: 'open sans';
 }
 
-.titulo{
-    color: #642a73 ;
+.contenedor {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo {
+    color: #642a73;
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
+    margin-top: 30px;
 }
 
-/*Header*/
-header{
+/* Header */
+
+header {
     width: 100%;
     height: 600px;
-    background: #009FFF; 
+    background: #6d2d5b;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, hsla(351, 83%, 55%, 0.61), hsla(203, 100%, 50%, 0.61)),url(../IMG/image4.jpeg); 
+    background: -webkit-linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(328, 56%, 38%, 0.664)), url(../IMG/portada.jpeg);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, hsla(351, 83%, 55%, 0.61), hsla(203, 100%, 50%, 0.61)),url(../IMG/image4.jpeg); 
+    background: linear-gradient(to right, hsla(340, 95%, 50%, 0.459), hsla(317, 45%, 52%, 0.664)), url(../IMG/portada.jpeg);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-attachment: fixed;
-    position: relative;    
+    position: relative;
 }
 
 nav{
     text-align: right;
-    padding: 30px 50px 0px 30px;
+    padding: 30px 50px 0 0;
 }
 
 nav > a{
-    color: #fff;
+    color:#fff;
     font-weight: 300;
-    text-decoration: none; /*Quita el subrayado de las letras*/
+    text-decoration: none;
     margin-right: 10px;
 }
 
-nav > a:hover{ /*Le da el estilo al elemento a*/
-    text-decoration: underline; /*Quita el subrayado de las letras*/    
-}
-
-.boton-ingresar{
-    display: block;
-    margin-left: auto;
-    margin-top: 20px;
-    margin-right: 60px;
-    background-image: linear-gradient(45deg,#00B4DB,#0083B0);
-    border: 2px solid #fff;
-    width: 90px;
-    height: 35px;
-    color: #000000;
-    text-decoration: none;
-    border-radius: 8px;      
-}
-
-.boton-ingresar:hover{
-    background-image: linear-gradient(45deg,#0083B0,#00B4DB);
-    color: #fff;
+nav > a:hover{
+    text-decoration: underline;
 }
 
 header .textos-header{
@@ -77,14 +68,13 @@ header .textos-header{
 
 .textos-header h1{
     font-size: 50px;
-    color: #fff;
+    color:#fff;
 }
 
-.textos-header h2{
-    padding: 20px 0 0 0;
+    .textos-header h2{
     font-size: 30px;
-    font-weight: 300px;
-    color: #fff;
+    font-weight: 300;
+    color:#fff;
 }
 
 .wave{
@@ -93,7 +83,8 @@ header .textos-header{
     width: 100%;
 }
 
-/*About us*/
+/* About us */
+
 main .sobre-nosotros{
     padding: 30px 0 60px 0;
 }
@@ -103,13 +94,12 @@ main .sobre-nosotros{
     justify-content: space-evenly;
 }
 
-.imagen-sobre-nosotros{
-    width: 30%;
+.imagen-about-us{
+    width: 48%;
 }
 
 .sobre-nosotros .contenido-textos{
-    width: 48%;
-
+width: 48%;
 }
 
 .contenido-textos h3{
@@ -125,7 +115,7 @@ main .sobre-nosotros{
     width: 30px;
     height: 30px;
     padding: 2px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
     margin-right: 5px;
 }
 
@@ -135,7 +125,130 @@ main .sobre-nosotros{
     text-align: justify;
 }
 
-/*footer*/
+/* portafolio */
+
+.portafolio{
+    background: #f2f2f2;
+}
+
+.galeria-portafolio{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen-portafolio{
+    width: 24%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-portafolio > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(273,91%,27%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-galeria img{
+    width: 50px;
+}
+
+.hover-galeria p{
+    color: #fff;
+}
+
+.imagen-portafolio:hover .hover-galeria{
+    transform: scale(1);
+}
+
+/* nuestros clientes */
+
+.caras{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.caras .cara{
+    background: #4d0686;
+    display: flex;
+    width: 45%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.caras .cara img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.caras .cara > .contenido-texto-cara{
+    width: 60%;
+    color: #fff;
+}
+
+.caras .cara > .contenido-texto-card p{
+    font-weight: 300;
+    padding-top: 5px;
+}
+
+/*  Que ofrecemos */
+
+.about-services{
+    background: #f2f2f2;
+    padding-bottom: 30px;
+}
+
+
+.servicio-cont{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-ind{
+    width: 28%;
+    text-align: center;
+}
+
+.servicio-ind img{
+    width: 90%;
+}
+
+.servicio-ind h3{
+    margin: 10px 0;
+}
+
+.servicio-ind p{
+    font-weight: 300;
+    text-align: justify;
+}
+
+/* footer */
 
 footer{
     background: #414141;
@@ -144,8 +257,7 @@ footer{
     overflow: hidden;
 }
 
-/*Flexbox*/
-.contenedor-footer{
+    .contenedor-footer{
     display: flex;
     width: 90%;
     justify-content: space-evenly;
@@ -154,19 +266,23 @@ footer{
     border-bottom: 1px solid #ccc;
 }
 
-.content-footer{
-    text-align: center;    
+.content-foo{
+    text-align: center;
 }
 
-.content-footer h4{
+.content-foo h1{
+    color: #fff;
+}
+
+.content-foo h4{
     color: #fff;
     border-bottom: 3px solid #af20d3;
     padding-bottom: 5px;
-    margin-bottom: 10px;       
+    margin-bottom: 10px;
 }
 
-.content-footer p{
-    color: #ccc;    
+.content-foo p{
+    color: #fff;
 }
 
 .titulo-final{
@@ -176,9 +292,9 @@ footer{
     color: #9e9797;
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:900px){
     header{
-        background-position: center;        
+        background-position: center;
     }
 
     .contenedor-sobre-nosotros{
@@ -191,14 +307,59 @@ footer{
         width: 90%;
     }
 
+    .imagen-about-us{
+        width: 90%;
+    }
+
+/* Galeria */
+
+    .imagen-portafolio{
+        width: 44%;
+    }
+
+    /* Clientes */
+
+    .caras{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caras .cara{
+        width: 90%;
+    }
+
+    .caras .cara:first-child{
+        margin-bottom: 30px;
+    }
+
+    /* servicios */
+
+    .servicio-cont{
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .servicio-ind{
+        width: 100%;
+        text-align: center;
+    }
+
+    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+        margin-bottom: 60px;
+    }
+
+    .servicio-ind img{
+        width: 90%;
+    }
 }
 
-@media screen and (max-width:500px) {  
+@media screen and (max-width:500px){
     nav{
         text-align: center;
-        padding: 30px 0 0 0 ;
+        padding: 30px 0 0 0;
     }
-    
+
     nav > a{
         margin-right: 5px;
     }
@@ -211,36 +372,56 @@ footer{
         font-size: 20px;
     }
 
-    /*About us*/
+    /* about us*/
 
-    .imagen-sobre-nosotros{
+    .imagen-about-us{
         margin-bottom: 60px;
-        width: 90%;
+        width: 99%;
     }
 
     .sobre-nosotros .contenido-textos{
         width: 95%;
     }
 
-    /*Footer*/
+    /* galeria */
+
+    .imagen-port{
+        width: 95%;
+    }
+
+    /* Clientes */
+
+    .caras .cara{
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caras .cara img{
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Footer */
 
     .contenedor-footer{
         flex-direction: column;
         border: none;
     }
 
-    .content-footer{
+    .content-foo{
         margin-bottom: 20px;
         text-align: center;
     }
 
-    .content-footer h4{
+    .content-foo h4{
         border: none;
     }
 
-    .content-footer p{
+    .content-foo p{
         color: #fff;
-        border-bottom: 1px solid #f2f2f2;
+        border-bottom: 1px solid #fff;
         padding-bottom: 20px;
     }
 
