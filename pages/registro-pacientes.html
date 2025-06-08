@@ -10,127 +10,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Registro Pacientes</title>
  </head> 
-      <body>
-    
-        <div class="formulario">
-          <h2>Registro de Paciente</h2>
-          <div id="error" class="error"></div>
-          <div class="campo">
-            <label>ID del paciente:</label>
-            <input type="text" id="id" required>
-          </div>
-          <div class="campo">
-            <label>Nombre de la especie:</label>
-            <input type="text" id="especie" required>
-          </div>
-          <div class="campo">
-            <label>Estado de urgencia:</label>
-            <select id="urgencia" required>
-              <option value="">Seleccionar</option>
-              <option value="Alta">Alta</option>
-              <option value="Media">Media</option>
-              <option value="Baja">Baja</option>
-            </select>
-          </div>
-          <div class="campo">
-            <label>Nombre del dueño:</label>
-            <input type="text" id="dueno" required>
-          </div>
-          <div class="campo">
-            <label>Número de contacto:</label>
-            <input type="tel" id="contacto" required>
-          </div>
-          <div class="campo">
-            <label>Correo electrónico:</label>
-            <input type="email" id="correo" required>
-          </div>
-          <div class="campo">
-            <label>Hora de ingreso:</label>
-            <input type="time" id="hora" required>
-          </div>
-          <button class="boton" onclick="guardarRegistro()">Registrar</button>
-        </div>
-      
-        <div class="tabla-container">
-          <h2>Pacientes Registrados</h2>
-          <div class="buscador">
-            <input type="text" id="buscar" placeholder="Buscar por ID, especie, dueño..." onkeyup="filtrarTabla()">
-          </div>
-          <table id="tabla">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Especie</th>
-                <th>Urgencia</th>
-                <th>Dueño</th>
-                <th>Contacto</th>
-                <th>Correo</th>
-                <th>Hora</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Registros aparecerán aquí -->
-            </tbody>
-          </table>
-        </div>
-      
-        <script>
-          function guardarRegistro() {
-            const id = document.getElementById('id').value.trim();
-            const especie = document.getElementById('especie').value.trim();
-            const urgencia = document.getElementById('urgencia').value;
-            const dueno = document.getElementById('dueno').value.trim();
-            const contacto = document.getElementById('contacto').value.trim();
-            const correo = document.getElementById('correo').value.trim();
-            const hora = document.getElementById('hora').value;
-            const errorDiv = document.getElementById('error');
-      
-            // Validación
-            if (!id || !especie || !urgencia || !dueno || !contacto || !correo || !hora) {
-              errorDiv.textContent = "Por favor, completa todos los campos.";
-              return;
-            }
-      
-            errorDiv.textContent = "";
-      
-            const tabla = document.getElementById('tabla').getElementsByTagName('tbody')[0];
-            const fila = tabla.insertRow();
-      
-            fila.insertCell(0).textContent = id;
-            fila.insertCell(1).textContent = especie;
-      
-            const urgenciaCell = fila.insertCell(2);
-            urgenciaCell.textContent = urgencia;
-      
-            if (urgencia === 'Alta') urgenciaCell.className = 'urgencia-alta';
-            else if (urgencia === 'Media') urgenciaCell.className = 'urgencia-media';
-            else if (urgencia === 'Baja') urgenciaCell.className = 'urgencia-baja';
-      
-            fila.insertCell(3).textContent = dueno;
-            fila.insertCell(4).textContent = contacto;
-            fila.insertCell(5).textContent = correo;
-            fila.insertCell(6).textContent = hora;
-      
-            // Limpiar formulario
-            document.getElementById('id').value = "";
-            document.getElementById('especie').value = "";
-            document.getElementById('urgencia').value = "";
-            document.getElementById('dueno').value = "";
-            document.getElementById('contacto').value = "";
-            document.getElementById('correo').value = "";
-            document.getElementById('hora').value = "";
-          }
-      
-          function filtrarTabla() {
-            const filtro = document.getElementById('buscar').value.toLowerCase();
-            const filas = document.querySelectorAll('#tabla tbody tr');
-      
-            filas.forEach(fila => {
-              const texto = fila.textContent.toLowerCase();
-              fila.style.display = texto.includes(filtro) ? '' : 'none';
-            });
-          }
-        </script>
-      
-      </body>
-      </html>
+ <body> 
+    <div class="formulario">
+      <h2>Registro de Paciente</h2>
+      <div id="error" class="error"></div>
+  
+      <div class="campo">
+        <label>ID del paciente:</label>
+        <input type="text" id="id" required>
+      </div>
+      <div class="campo">
+        <label>Nombre de la mascota:</label>
+        <input type="text" id="nombre" required>
+      </div>
+      <div class="campo">
+        <label>Especie:</label>
+        <select id="especie" required>
+          <option value="">Seleccionar</option>
+          <option value="Perro">Perro</option>
+          <option value="Gato">Gato</option>
+          <option value="Conejo">Conejo</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label>Edad de la mascota:</label>
+        <input type="number" id="edad" required>
+      </div>
+      <div class="campo">
+        <label>Estado de urgencia:</label>
+        <select id="urgencia" required>
+          <option value="">Seleccionar</option>
+          <option value="Alta">Alta</option>
+          <option value="Media">Media</option>
+          <option value="Baja">Baja</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label>Nombre del dueño:</label>
+        <input type="text" id="dueno" required>
+      </div>
+      <div class="campo">
+        <label>Número de contacto:</label>
+        <input type="tel" id="contacto" required>
+      </div>
+      <div class="campo">
+        <label>Correo electrónico:</label>
+        <input type="email" id="correo" required>
+      </div>
+      <div class="campo">
+        <label for="fecha">Fecha de ingreso:</label>
+        <input type="date" id="fecha" name="fecha">
+      </div>
+      <div class="campo">
+        <label>Hora de ingreso:</label>
+        <input type="time" id="hora" required>
+      </div>
+      <div class="campo">
+        <label for="observaciones" class="observaciones-label">Observaciones de ingreso:</label>
+        <textarea id="observaciones" name="observaciones" class="observaciones-textarea" placeholder="Ingresa las observaciones de ingreso de la mascota" required></textarea>
+      </div>
+  
+    <script>
+      function guardarRegistro() {
+        const id = document.getElementById('id').value.trim();
+        const especie = document.getElementById('especie').value.trim();
+        const edad = document.getElementById('edad').value.trim();
+        const urgencia = document.getElementById('urgencia').value;
+        const dueno = document.getElementById('dueno').value.trim();
+        const contacto = document.getElementById('contacto').value.trim();
+        const correo = document.getElementById('correo').value.trim();
+        const hora = document.getElementById('hora').value;
+        const errorDiv = document.getElementById('error');
+  
+        if (!id || !especie || !edad || !urgencia || !dueno || !contacto || !correo || !hora) {
+          errorDiv.textContent = "Por favor, completa todos los campos.";
+          return;
+        }
+  
+        errorDiv.textContent = "";
+  
+        // Aquí podrías guardar el registro en localStorage si lo deseas más adelante
+  
+        // Limpiar formulario
+        document.getElementById('id').value = "";
+        document.getElementById('especie').value = "";
+        document.getElementById('edad').value = "";
+        document.getElementById('urgencia').value = "";
+        document.getElementById('dueno').value = "";
+        document.getElementById('contacto').value = "";
+        document.getElementById('correo').value = "";
+        document.getElementById('hora').value = "";
+      }
+    </script>
+  </body>
+  
