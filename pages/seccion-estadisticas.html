@@ -19,25 +19,44 @@
       <a href="#">Contacto</a>
     </nav>
   </header>
-
   <section id="urgencias-estadisticas">
     <h1>Nuestras Urgencias</h1>
-    <table>
-    </table>
-    <!-- Aquí se renderiza el gráfico -->
     <canvas id="myChart" width="600" height="200"></canvas>
   </section>
-
-  <!-- Script para configurar la gráfica -->
+  <div id="infoServicios" style="text-align: justify; font-size: 24px; font-weight: none; 
+margin-top: 50px; max-width: 600px; margin-left: auto; margin-right: auto;"></div> 
+<footer style="margin-top: 160px; background: #0083B0; padding: 20px; text-align: center ;">
+    <div class="contenedor-footer">
+      <div class="content-foo">
+        <h1>Contactate con nosotros</h1>
+      </div>
+      <div class="content-foo">
+        <h4>Numero de contacto</h4>
+        <p>+ 57 601 2281260</p>                
+      </div>
+      <div class="content-foo">
+        <h4>E-mail: veterinaria@gmail.com</h4>                
+      </div>
+      <div class="content-foo">
+        <h4>Ubicación</h4>
+        <p>Calle 57 #3-00</p>                
+      </div>
+    </div>
+    <h2 class="titulo-final">&copy; | Jhoan Steven Rengifo Romero | Nick Jeferson Rivera Garces | Wendy Paola Roa Barbosa | Adriana Lucia Rodríguez Rico </h2>
+  </footer>
   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const data = [250, 120, 55, 175];
+        const labels = ['Urgencia resuelta', 'Tratamiento en casa', 'Hospitalización', 'Citas prioritarias'];
+        const totalAtenciones = data.reduce((acc, val) => acc + val, 0);
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Urgencia resuelta', 'Tratamiento en casa', 'Hospitalización', 'Citas prioritaias'],
+        labels: labels,
         datasets: [{
-          label: 'Cantidad de atenciones',
-          data: [12, 19, 3, 5],
+          label: `Total de atenciones: ${totalAtenciones}`,
+          data: data,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -54,12 +73,25 @@
         }]
       },
       options: {
+        plugins: {
+          title: {
+            display: true,
+            padding: 10
+          }
+        },
         scales: {
           y: { beginAtZero: true }
         }
       }
     });
-  </script>
-</body>
-</html>
+        const porcentajes = data.map(valor => ((valor / totalAtenciones) * 100).toFixed(2));
+        document.getElementById("infoServicios").innerHTML =
+          `En nuestra clínica veterinaria, hemos atendido un total de ${totalAtenciones} casos. 
+          De ellos, el ${porcentajes[0]}% fueron urgencias resueltas, el ${porcentajes[1]}% tratamientos en casa, 
+          el ${porcentajes[2]}% hospitalizaciones y el ${porcentajes[3]}% citas prioritarias. 
+          ¡Confía en nuestros servicios especializados siempre para el bienestar y seguridad de tu mascota!`;
+    });
+      </script>
+  </body>
+  </html>
 

@@ -15,7 +15,7 @@ body {
 
 /* Estilos para el encabezado y la navegación */
 header {
-  background-color: #d8edf8;
+  background-color: #0083B0;
   padding: 10px 20px;
   text-decoration: none;
 }
@@ -26,11 +26,10 @@ header nav {
 }
 
 header nav a {
-  color: #642a73;
-  text-decoration: none;
+  color: #fff;
+  text-decoration: bold;
   padding: 5px 10px;
   border-radius: 5px;
-  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
