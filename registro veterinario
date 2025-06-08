@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Veterinaria - Registro de Pacientes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      padding: 20px;
+    }
+
+    .formulario, .tabla-container {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2a6f7b;
+    }
+
+    .campo {
+      margin-bottom: 15px;
+    }
+
+    .campo label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .campo input,
+    .campo select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .boton {
+      width: 100%;
+      padding: 10px;
+      background-color: #2a6f7b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .boton:hover {
+      background-color: #1e4d56;
+    }
+
+    .buscador {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .buscador input {
+      width: 80%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #2a6f7b;
+      color: white;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="formulario">
+    <h2>Registro de Paciente</h2>
+    <div id="error" class="error"></div>
+    <div class="campo">
+      <label>ID del paciente:</label>
+      <input type="text" id="id" required>
+    </div>
+    <div class="campo">
+      <label>Nombre de la especie:</label>
+      <input type="text" id="especie" required>
+    </div>
+    <div class="campo">
+      <label>Estado de urgencia:</label>
+      <select id="urgencia" required>
+        <option value="">Seleccionar</option>
+        <option value="Alta">Alta</option>
+        <option value="Media">Media</option>
+        <option value="Baja">Baja</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label>Nombre del dueño:</label>
+      <input type="text" id="dueno" required>
+    </div>
+    <div class="campo">
+      <label>Hora de ingreso:</label>
+      <input type="time" id="hora" required>
+    </div>
+    <button class="boton" onclick="guardarRegistro()">Registrar</button>
+  </div>
+
+  <div class="tabla-container">
+    <h2>Pacientes Registrados</h2>
+    <div class="buscador">
+      <input type="text" id="buscar" placeholder="Buscar por ID, especie o dueño..." onkeyup="filtrarTabla()">
+    </div>
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Especie</th>
+          <th>Urgencia</th>
+          <th>Dueño</th>
+          <th>Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Se agregarán registros aquí -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function guardarRegistro() {
+      const id = document.getElementById('id').value.trim();
+      const especie = document.getElementById('especie').value.trim();
+      const urgencia = document.getElementById('urgencia').value;
+      const dueno = document.getElementById('dueno').value.trim();
+      const hora = document.getElementById('hora').value;
+      const errorDiv = document.getElementById('error');
+
+      // Validación básica
+      if (!id || !especie || !urgencia || !dueno || !hora) {
+        errorDiv.textContent = "Por favor, completa todos los campos.";
+        return;
+      }
+
+      errorDiv.textContent = "";
+
+      const tabla = document.getElementById('tabla').getElementsByTagName('tbody')[0];
+      const fila = tabla.insertRow();
+
+      fila.insertCell(0).textContent = id;
+      fila.insertCell(1).textContent = especie;
+      fila.insertCell(2).textContent = urgencia;
+      fila.insertCell(3).textContent = dueno;
+      fila.insertCell(4).textContent = hora;
+
+      // Limpiar el formulario
+      document.getElementById('id').value = "";
+      document.getElementById('especie').value = "";
+      document.getElementById('urgencia').value = "";
+      document.getElementById('dueno').value = "";
+      document.getElementById('hora').value = "";
+    }
+
+    function filtrarTabla() {
+      const filtro = document.getElementById('buscar').value.toLowerCase();
+      const filas = document.querySelectorAll('#tabla tbody tr');
+
+      filas.forEach(fila => {
+        const texto = fila.textContent.toLowerCase();
+        fila.style.display = texto.includes(filtro) ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
