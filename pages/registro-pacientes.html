@@ -11,6 +11,7 @@
     <title>Registro Pacientes</title>
  </head> 
  <body> 
+  <form onsubmit="event.preventDefault(); guardarDatos();"></form>
     <div class="formulario">
       <h2>Registro de Paciente</h2>
       <div id="error" class="error"></div>
@@ -31,10 +32,6 @@
           <option value="Gato">Gato</option>
           <option value="Conejo">Conejo</option>
         </select>
-      </div>
-      <div class="campo">
-        <label>Edad de la mascota:</label>
-        <input type="number" id="edad" required>
       </div>
       <div class="campo">
         <label>Estado de urgencia:</label>
@@ -68,8 +65,7 @@
       <div class="campo">
         <label for="observaciones" class="observaciones-label">Observaciones de ingreso:</label>
         <textarea id="observaciones" name="observaciones" class="observaciones-textarea" placeholder="Ingresa las observaciones de ingreso de la mascota" required></textarea>
-      </div>
-  
+
     <script>
       function guardarRegistro() {
         const id = document.getElementById('id').value.trim();
@@ -88,19 +84,16 @@
         }
   
         errorDiv.textContent = "";
-  
-        // Aquí podrías guardar el registro en localStorage si lo deseas más adelante
-  
-        // Limpiar formulario
-        document.getElementById('id').value = "";
-        document.getElementById('especie').value = "";
-        document.getElementById('edad').value = "";
-        document.getElementById('urgencia').value = "";
-        document.getElementById('dueno').value = "";
-        document.getElementById('contacto').value = "";
-        document.getElementById('correo').value = "";
-        document.getElementById('hora').value = "";
       }
     </script>
   </body>
-  
+   <script>
+    function guardarDatos() {
+      alert("Datos guardados correctamente.");
+    }
+  </script>
+</head>
+    <button type="submit">Guardar</button>
+  </form>
+</body>
+</html>
