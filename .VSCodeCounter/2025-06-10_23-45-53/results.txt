@@ -1,0 +1,47 @@
+Date : 2025-06-10 23:45:53
+Directory : c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria
+Total : 17 files,  2005 codes, 44 comments, 266 blanks, all 2315 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| PostCSS    |          8 |      1,208 |         36 |        233 |      1,477 |
+| HTML       |          8 |        776 |          8 |         30 |        814 |
+| JavaScript |          1 |         21 |          0 |          3 |         24 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                        | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                           |         17 |      2,005 |         44 |        266 |      2,315 |
+| . (Files)                                                                                                   |          2 |        226 |          1 |          4 |        231 |
+| CSS                                                                                                         |          8 |      1,208 |         36 |        233 |      1,477 |
+| js                                                                                                          |          1 |         21 |          0 |          3 |         24 |
+| pages                                                                                                       |          6 |        550 |          7 |         26 |        583 |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                    | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\CSS\dashboard.css                  | PostCSS    |        199 |          0 |         23 |        222 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\CSS\estilos-estadisticas.css       | PostCSS    |         67 |          4 |         11 |         82 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\CSS\estilos-historia-clinica.css   | PostCSS    |         26 |          0 |          6 |         32 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\CSS\estilos.css                    | PostCSS    |        352 |         16 |         88 |        456 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\CSS\login.css                      | PostCSS    |         64 |          0 |          8 |         72 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\CSS\registro-pacientes.css         | PostCSS    |         94 |          0 |          2 |         96 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\CSS\seccion-prueba.css             | PostCSS    |        331 |         16 |         84 |        431 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\CSS\segui-control-pacientes.css    | PostCSS    |         75 |          0 |         11 |         86 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\index.html                         | HTML       |        198 |          1 |          4 |        203 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\js\login.js                        | JavaScript |         21 |          0 |          3 |         24 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\login.html                         | HTML       |         28 |          0 |          0 |         28 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\pages\dashboard.html               | HTML       |         41 |          0 |          0 |         41 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\pages\historia-clinica.html        | HTML       |         41 |          0 |          3 |         44 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\pages\registro-pacientes.html      | HTML       |         95 |          0 |          4 |         99 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\pages\seccion-estadisticas.html    | HTML       |         95 |          1 |          2 |         98 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\pages\seccion-prueba.html          | HTML       |        169 |          1 |          1 |        171 |
+| c:\Users\DevJhoan\Documents\Code_2024\Universidad\Proyecto-U-Veterinaria\pages\segui-control-pacientes.html | HTML       |        109 |          5 |         16 |        130 |
+| Total                                                                                                       |            |      2,005 |         44 |        266 |      2,315 |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
