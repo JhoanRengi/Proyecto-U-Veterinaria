@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Seg. Control Pacientes</title>
+    <title>Clínica Veterinaria | Seg. Control Pacientes</title>
 </head>
 <body>
     <!DOCTYPE html>
@@ -104,8 +104,8 @@
 
     document.getElementById('resultado').textContent = "Registro guardado exitosamente.";
   }
-
-  function buscarPaciente() {
+  
+  function guardarDatos() {
     const id = document.getElementById('busqueda').value.trim();
     const paciente = pacientes[id];
 
@@ -122,6 +122,19 @@
     } else {
       document.getElementById('resultado').textContent = "Paciente no encontrado.";
     }
+
+    // Guardar en localStorage
+    const seguimiento = {
+        procedimiento: document.getElementById('procedimientos').value,
+        temperatura: document.getElementById('temperatura').value,
+        frecuencia: document.getElementById('frecuencia').value,
+        medicamento: document.getElementById('medicamento').value.trim(),
+        dosis: document.getElementById('dosis').value.trim(),
+        observaciones: document.getElementById('observaciones').value.trim()
+    };
+    localStorage.setItem(`seguimiento_${id}`, JSON.stringify(seguimiento));
+
+    document.getElementById('resultado').textContent = "Registro guardado exitosamente.";
   }
 </script>
 

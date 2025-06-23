@@ -8,37 +8,106 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Historia Clinica</title>
+    <title>Clínica Veterinaria | Historia Clínica</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../index.html">Inicio</a>
-            <a href="#">Acerca de</a>
-            <a href="#">Portafolio</a>
-            <a href="historia-clinica.html">Servicios</a>
-            <a href="#">Contacto</a>
-        </nav>
-    </header>
-    <main>
-        <form action="">
-        <h1>Historia Clínica</h1>
-        <div class="form-group">
-            <div class="form-group-level">
-                <label for="nombre">Nombre del Paciente:</label>
-                <input type="text" id="nombre" name="nombre" required><br>
-            </div>
-            <div class="form-group-level">
-                <label for="id_paciente">Identificación del Paciente:</label>
-                <input type="text" name="id_paciente" id="id_paciente" required>
-            </div>
-            
+    <div class="formulario">
+        <h2>Historia Clínica del Paciente</h2>
+        
+        <!-- Búsqueda por ID -->
+        <div class="campo">
+            <label for="id-busqueda">ID del Paciente:</label>
+            <input type="text" id="id-busqueda" placeholder="Ingresa el ID">
+            <button onclick="buscarHistorial()">Buscar</button>
         </div>
-    </form>
-    </main>
-    <footer>
-    
-    </footer>   
-    
+
+        <!-- Datos del paciente (se llenan automáticamente) -->
+        <div id="datos-paciente">
+            <h3>Datos Básicos</h3>
+            <div class="campo">
+                <label>Nombre de la mascota:</label>
+                <input type="text" id="nombre-mascota" readonly>
+            </div>
+            <div class="campo">
+                <label>Especie:</label>
+                <input type="text" id="especie" readonly>
+            </div>
+            <div class="campo">
+                <label>Dueño:</label>
+                <input type="text" id="dueno" readonly>
+            </div>
+
+            <h3>Registro de Ingreso</h3>
+            <div class="campo">
+                <label>Fecha de ingreso:</label>
+                <input type="text" id="fecha-ingreso" readonly>
+            </div>
+            <div class="campo">
+                <label>Urgencia:</label>
+                <input type="text" id="urgencia" readonly>
+            </div>
+            <div class="campo">
+                <label>Observaciones iniciales:</label>
+                <textarea id="observaciones-iniciales" readonly></textarea>
+            </div>
+
+            <h3>Seguimiento Clínico</h3>
+            <div class="campo">
+                <label>Procedimientos realizados:</label>
+                <input type="text" id="procedimientos" readonly>
+            </div>
+            <div class="campo">
+                <label>Signos vitales:</label>
+                <input type="text" id="signos-vitales" readonly>
+            </div>
+            <div class="campo">
+                <label>Medicamentos:</label>
+                <input type="text" id="medicamentos" readonly>
+            </div>
+            <div class="campo">
+                <label>Observaciones de evolución:</label>
+                <textarea id="observaciones-evolucion" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function buscarHistorial() {
+            const id = document.getElementById('id-busqueda').value.trim();
+            if (!id) {
+                alert("Ingresa un ID válido.");
+                return;
+            }
+
+            // Recuperar datos de localStorage (registro-pacientes.html)
+            const registro = JSON.parse(localStorage.getItem(`registro_${id}`));
+            
+            // Recuperar datos de seguimiento (segui-control-pacientes.html)
+            const seguimiento = JSON.parse(localStorage.getItem(`seguimiento_${id}`));
+
+            if (!registro && !seguimiento) {
+                alert("No se encontró historial para este ID.");
+                return;
+            }
+
+            // Llenar datos básicos
+            if (registro) {
+                document.getElementById('nombre-mascota').value = registro.nombre || "N/A";
+                document.getElementById('especie').value = registro.especie || "N/A";
+                document.getElementById('dueno').value = registro.dueno || "N/A";
+                document.getElementById('fecha-ingreso').value = registro.fecha || "N/A";
+                document.getElementById('urgencia').value = registro.urgencia || "N/A";
+                document.getElementById('observaciones-iniciales').value = registro.observaciones || "N/A";
+            }
+
+            // Llenar seguimiento
+            if (seguimiento) {
+                document.getElementById('procedimientos').value = seguimiento.procedimiento || "N/A";
+                document.getElementById('signos-vitales').value = `Temp: ${seguimiento.temperatura || "N/A"} °C | FC: ${seguimiento.frecuencia || "N/A"} lpm`;
+                document.getElementById('medicamentos').value = `${seguimiento.medicamento || "N/A"} (${seguimiento.dosis || "N/A"})`;
+                document.getElementById('observaciones-evolucion').value = seguimiento.observaciones || "N/A";
+            }
+        }
+    </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <title>Registro Pacientes</title>
+    <title>Clínica Veterinaria | Registro Pacientes</title>
 </head>
 <body>
     <form onsubmit="event.preventDefault(); guardarRegistro();">
@@ -68,9 +68,11 @@
             <button type="submit">Guardar</button>
         </div>
     </form>
-    <script>
-      function guardarRegistro() {
+    <script>      
+
+        function guardarRegistro() {
         const id = document.getElementById('id').value.trim();
+        
         const especie = document.getElementById('especie').value.trim();
         const urgencia = document.getElementById('urgencia').value;
         const dueno = document.getElementById('dueno').value.trim();
@@ -80,13 +82,27 @@
         const errorDiv = document.getElementById('error');
 
         if (!id || !especie || !urgencia || !dueno || !contacto || !correo || !hora) {
-          errorDiv.textContent = "Por favor, completa todos los campos.";
-          return;
+            errorDiv.textContent = "Por favor, completa todos los campos.";
+            return;
         }
 
         errorDiv.textContent = "";
         alert("Datos guardados correctamente.");
-      }
+
+        // Guardar en localStorage
+        const registro = {
+        nombre: document.getElementById('nombre').value.trim(),
+        especie: document.getElementById('especie').value,
+        urgencia: document.getElementById('urgencia').value,
+        dueno: document.getElementById('dueno').value.trim(),
+        fecha: document.getElementById('fecha').value,
+        observaciones: document.getElementById('observaciones').value.trim()
+        };
+        localStorage.setItem(`registro_${id}`, JSON.stringify(registro));
+
+        alert("Datos guardados correctamente.");
+        document.querySelector("form").reset();
+        }
     </script>
 </body>
 </html>
