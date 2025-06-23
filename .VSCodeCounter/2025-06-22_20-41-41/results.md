@@ -1,27 +1,27 @@
 # Summary
 
-Date : 2025-06-10 23:45:53
+Date : 2025-06-22 20:41:41
 
 Directory c:\\Users\\DevJhoan\\Documents\\Code_2024\\Universidad\\Proyecto-U-Veterinaria
 
-Total : 17 files,  2005 codes, 44 comments, 266 blanks, all 2315 lines
+Total : 20 files,  2315 codes, 62 comments, 331 blanks, all 2708 lines
 
 Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
 ## Languages
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| PostCSS | 8 | 1,208 | 36 | 233 | 1,477 |
-| HTML | 8 | 776 | 8 | 30 | 814 |
+| PostCSS | 10 | 1,463 | 50 | 272 | 1,785 |
+| HTML | 9 | 831 | 12 | 56 | 899 |
 | JavaScript | 1 | 21 | 0 | 3 | 24 |
 
 ## Directories
 | path | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| . | 17 | 2,005 | 44 | 266 | 2,315 |
-| . (Files) | 2 | 226 | 1 | 4 | 231 |
-| CSS | 8 | 1,208 | 36 | 233 | 1,477 |
+| . | 20 | 2,315 | 62 | 331 | 2,708 |
+| . (Files) | 2 | 225 | 1 | 4 | 230 |
+| CSS | 10 | 1,463 | 50 | 272 | 1,785 |
 | js | 1 | 21 | 0 | 3 | 24 |
-| pages | 6 | 550 | 7 | 26 | 583 |
+| pages | 7 | 606 | 11 | 52 | 669 |
 
 Summary / [Details](details.md) / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
